@@ -3,23 +3,25 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router";
+import Home from "./pages/home.tsx";
+import Login from "./pages/Login.tsx";
 
 function mainPage() {
   return <App />;
 }
 
-function teste() {
-  return "Deivid Viado";
+function home() {
+  return <Home />;
 }
 
-function teste2() {
-  return "Página da Web."
+function login() {
+  return <Login />;
 }
 
 const router = createBrowserRouter([
   { path: "/", Component: mainPage },
-  { path: "/rota2", Component: teste },
-  {path: "/araucaria", Component: teste2}
+  { path: "/home", Component: home },
+  { path: "/login", Component: login },
 ]);
 
 createRoot(document.getElementById("root")!).render(
